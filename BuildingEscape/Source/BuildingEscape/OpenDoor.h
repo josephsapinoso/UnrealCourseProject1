@@ -21,6 +21,10 @@ public:
 	// Called every frame
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
+private:
+	UPROPERTY(VisibleAnywhere) // a macro we set 
+	float OpenAngle = 90.0f; // other methods will not be able to set this since it is "private"
 		
-	
+	UPROPERTY(EditAnywhere) // another macro we are tasked to create
+	ATriggerVolume* PressurePlate;
 };
