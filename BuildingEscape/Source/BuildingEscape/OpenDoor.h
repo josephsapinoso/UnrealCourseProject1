@@ -30,6 +30,5 @@ private:
 	UPROPERTY(EditAnywhere) // another macro we are tasked to create
 	AActor* PressurePlate; 
 
-	UPROPERTY(EditAnywhere) 
 	AActor* ActorThatOpens; // remember pawn inherits from actor 
 };
