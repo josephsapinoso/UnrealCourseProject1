@@ -19,16 +19,23 @@ public:
 	virtual void BeginPlay() override;
 
 	void OpenDoor();
+	void CloseDoor();
 	
 	// Called every frame
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
 private:
-	UPROPERTY(VisibleAnywhere) // a macro we set 
+	UPROPERTY(EditAnywhere) // a macro we set 
 	float OpenAngle = 90.0f; // other methods will not be able to set this since it is "private"
 		
 	UPROPERTY(EditAnywhere) // another macro we are tasked to create
 	AActor* PressurePlate; 
 
+	UPROPERTY(EditAnywhere)
+	float DoorCloseDelay = 0.6f;
+
+	float LastDoorOpenTime;
+
 	AActor* ActorThatOpens; // remember pawn inherits from actor 
+	AActor* Owner; // the owning door
 };
